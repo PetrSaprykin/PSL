@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+	background: rgb(0,1,36);
+    background: linear-gradient(180deg, rgba(0,1,36,1) 31%, rgba(68,33,213,1) 64%, rgba(166,0,255,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+html,body {
+    min-height:100vh;
+}
+
+.page__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 650px;
+    margin: 10px;
+}
+
+h1{
+    font-size: 96px;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.links__row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.wrap{
+    width: 144px;
+    height: 144px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transition: 0.3s;
+    margin: 20px;
+}
+.wrap:hover{
+    transform: translateY(-15px);
+}
+.wrap img{
+    width: 128px;
+    height: 128px;
+    box-shadow: 1px 5px 76px 3px rgba(34, 60, 80, 0.6);
+    border-radius: 100px;
+    transition: 0.2s;
+    cursor: pointer;
+    z-index: 1;
+}
+img:hover{
+    width: 144px;
+    height: 144px;
+}
+.discord p{
+    color: white;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 18px;
+    transition-delay: 0.35s;
+}
+.discord.active{
+    width: 128px;
+    height: 128px;
+    transform: rotateY(180deg);
+    background-color: rgb(46, 45, 45);
+    transition: 1s;
+}
+.discord.active img{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+.discord.active p{
+    z-index: 2;
+    opacity: 1;
+    transform: rotateY(180deg);
+}
+@media (max-width:768px) {
+    .wrap{
+        width: 110px;
+        height: 110px;
+        margin: 15px;
+    }
+    .discord.active{
+        width: 110px;
+        height: 110px;
+    }
+    .discord.active p{
+        font-size: 14px;
+    }
+    .wrap img{
+        width: 110px;
+        height: 110px;
+    }
+    h1{
+        font-size: 64px;
+    }
+}
+
+@media (max-width:890px) {
+    .links__row{
+        max-width: 649px;
+    }
+}
